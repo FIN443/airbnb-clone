@@ -33,6 +33,8 @@
             <li>{{a}}</li>
         {% endfor %}
         </ul>
-        
+    </div>
+    <div>
+        <a href="{% url "rooms:edit" room.pk %}">Edit Room</a>
     </div>
 {% endblock %}

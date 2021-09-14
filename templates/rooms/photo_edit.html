@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Update photo</h1>
+<div>
+    {% include 'mixins/room/room_form.html' with form=form cta="Updating photo" %}
+
+</div>
+{% endblock content %}
