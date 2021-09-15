@@ -44,6 +44,7 @@ class RoomAdmin(admin.ModelAdmin):
                     "address",
                     "price",
                     "room_type",
+                    "instant_book",
                 ),
             },
         ),
