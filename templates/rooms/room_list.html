@@ -9,7 +9,7 @@
         <div class="rounded-xl mx-auto bg-gray-800 h-50vh mt-32 mb-24 bg-cover bg-center" style="background-image: url(https://images8.alphacoders.com/881/thumb-1920-881551.jpg);"></div>
         <div class="flex flex-wrap mb-10">
             {% for room in rooms %}
-                    {% include 'partials/room_card.html' with room=room %}
+                    {% include 'mixins/room_card.html' with room=room %}
             {% endfor %}
         </div>
         <div class="flex items-center justify-center mx-auto container">

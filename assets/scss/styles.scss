@@ -12,6 +12,31 @@
     }
     &:hover {
         @apply border-gray-600;
+    };
+}
+
+.btn {
+    @apply w-full text-center rounded-sm py-5 font-light text-lg;
+}
+
+input {
+    @apply w-full rounded-sm py-5 font-light text-lg text-left border border-gray-600 px-5;
+    &:focus {
+        @apply outline-none border-green-500;
+    }
+}
+
+form {
+    .input {
+        @apply my-2 w-full;
+        &.has_error {
+            input {
+                @apply bg-red-200 border-red-300;
+                &:focus {
+                    @apply bg-white border-green-500;
+                }
+            }
+        }
     }
 }
 
