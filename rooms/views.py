@@ -128,6 +128,11 @@ class EditRoomView(UpdateView):
         "house_rules",
     )
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=form_class)
+        form.fields["instant_book"].widget.attrs = {"class": "block w-auto"}
+        return form
+
 
 class RoomPhotosView(RoomDetail):
 
