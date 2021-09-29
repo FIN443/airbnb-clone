@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import widgets
+from django.contrib.auth.forms import PasswordChangeForm
 from . import models
 
 
@@ -66,3 +66,22 @@ class SignUpForm(forms.ModelForm):
         user.username = email
         user.set_password(password)
         user.save()
+
+
+class UpdatePasswordForm(PasswordChangeForm):
+
+    """Update Password Form Definition"""
+
+    old_password = forms.CharField(
+        required=True,
+        widget=forms.PasswordInput(attrs={"placeholder": "Current Password"}),
+    )
+
+    new_password1 = forms.CharField(
+        required=True, widget=forms.PasswordInput(attrs={"placeholder": "New Password"})
+    )
+
+    new_password2 = forms.CharField(
+        required=True,
+        widget=forms.PasswordInput(attrs={"placeholder": "Confirm New Password"}),
+    )
