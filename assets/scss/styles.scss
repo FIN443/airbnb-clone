@@ -73,8 +73,11 @@ form {
     }
 }
 
+.message-anim {
+    animation: messageFadeIn 4s ease-in-out forwards;
+}
+
 .message {
-    animation: messageFadeIn 5s ease-in-out forwards;
     &.error {
         @apply bg-red-600;
     }
