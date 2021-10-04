@@ -6,9 +6,9 @@
 }
 
 .nav_link {
-    @apply ml-8 border-b-2 border-white  px-2 h-full flex items-center;
+    @apply ml-3 border-b-2 border-white  px-2 h-full flex items-center;
     a {
-        @apply py-8 px-5;
+        @apply py-8 px-3;
     }
     &:hover {
         @apply border-gray-600;

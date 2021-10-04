@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.admin import UserAdmin
 from . import models
 
@@ -10,7 +11,7 @@ class CustomUserAdmin(UserAdmin):
 
     fieldsets = UserAdmin.fieldsets + (
         (
-            "Custom Profile",
+            _("Custom Profile"),
             {
                 "fields": (
                     "avatar",
