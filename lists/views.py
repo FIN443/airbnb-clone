@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, reverse
 from django.views.generic import TemplateView
 from django.contrib import messages
+from users import mixins as user_mixins
 from rooms import models as room_models
 from . import models as list_models
 
@@ -22,5 +23,5 @@ def toggle_room(request, pk):
     return redirect(reverse("rooms:detail", kwargs={"pk": pk}))
 
 
-class SeeFavsView(TemplateView):
+class SeeFavsView(user_mixins.LoggedInOnlyView, TemplateView):
     template_name = "lists/list_detail.html"

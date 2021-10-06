@@ -76,7 +76,7 @@ class User(AbstractUser):
     login_method = models.CharField(
         _("login_methdo"), max_length=20, choices=LOGIN_CHOICES, default=LOGIN_EMAIL
     )
-    objects = managers.CustomModelManager()
+    objects = managers.CustomUserManager()
 
     def get_absolute_url(self):
         return reverse("users:profile", kwargs={"pk": self.pk})

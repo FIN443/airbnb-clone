@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+    {{user.first_name}}'s Reservations
+{% endblock page_title %}
+
+
+{% block content %}
+    
+    {% if  reservations.count > 0 %}
+        <div class="container flex flex-col items-center mx-auto pb-10">
+            <h3 class="mb-12 text-2xl">{{user.first_name}}'s Reservations</h3>
+            <div class="w-3/4 flex flex-wrap mb-10">
+                {% for reservation in reservations %}
+                        {% include 'mixins/room_card.html' with room=reservation.room reservation=reservation %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+        
+
+{% endblock content %}

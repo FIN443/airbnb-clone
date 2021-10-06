@@ -4,6 +4,8 @@ from . import views
 app_name = "reservations"
 
 urlpatterns = [
+    path("", views.ReservationGuestView.as_view(), name="guest"),
+    path("host/<int:pk>/", views.ReservationHostView.as_view(), name="host"),
     path(
         "create/<int:room>/<int:year>-<int:month>-<int:day>/",
         views.create,
